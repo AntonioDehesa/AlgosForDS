@@ -70,3 +70,37 @@ Examples of these techniques:
 
 ## Incremental design
 
+We build things up incrementally. 
+Our example is sorting.
+First, sorting, in a very mathematical definition, is: you have a sequence of values taken in some domain, and you produce a permutation of those values, such that they are in order. 
+What "order" means is up to you: directly, reverse, by characters, by distance, etc. 
+
+In incremental design, you work in small steps.
+In DS, you may not have all your data at once. So you solve the first part of your data, and once more data arrives, you just incorporate it to the previous solution. That way, you do not have to start all over. 
+Similar with sorting. Once you have a sorted list, if you add new elements, you just have to sort that one element, and not the entire list again. 
+
+## Divide and Conquer: DAC
+
+As its name describes. 
+There are 3 steps to divide and conquer:
+* Divide: We divide the problem into smaller pieces
+If we have, say, 10000 items, we can divide it into multiple fragments, and work with, say, 10 sets of 1000. The division could be with a central element to compare to: Anything larger than this goes into this set, anything smaller goes into this other set
+* Conquer: We solve the problem. In this case, we could sort each of the 1000. 
+* Combine: We combine the already sorted elements. 
+
+Remember: not every problem can be divided.
+
+# Sorting efficiency
+
+Things like insertion sort or selection sort are not very efficient, so we could use merge sort. 
+
+## Merge Sort
+
+We take our list to sort. We split it by the middle. Then, we sort both halves applying merge sort to each again, and merge them again. DAC. 
+
+Accessing an arbitrary element of a list takes O(1) time.
+Complexity is T(n) = 2*T(n/2) + n (for n >= 2)
+
+that  + n comes from the merging back step. 
+Big O: O(n log n)
+Much faster than insertion or selection sort. 
