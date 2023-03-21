@@ -47,3 +47,37 @@ For some cases, best, average, and worst are the same.
 An exact analysis is difficult, as can be best, worst, and average. 
 An algorithm is efficient if, for large inputs, it performs significantly fewer basic steps than a brute force approach. 
 
+# Algorithm efficiency part II
+
+## Efficiency bounds
+
+Previously, we discussed that in algorithms we could ignore the lower order terms, as when we scale, only the highest order term matters. 
+However, an easier approach to this is using bounds. 
+For most purposes, it is not so important that we get a very very specific efficiency, as long as our efficiency is bounded from the top and / or the bottom.
+
+These bounds are usually functions, which the larger the input, the higher the efficiency in terms of execution time. 
+So we dont have a specific efficiency, but we can guarantee that its between two functions / values. 
+
+### Symbology: 
+
+* O: Big O. It represents an upper bound
+* Omega : Big Omega. Represents a lower bound. 
+* Theta: Big Theta. It describes both the O and Omega for a code
+
+Now, the limits dont always have to be bigger or smaller than the function. As long as after some time has passed, the limit will be either bigger or smaller. 
+
+## Example
+
+### Insertion sort
+So insertion sort is
+(a1 + a2)n + a3 -1 <= T(n) < a1n + a2*((n+2)(n-1))/2  + a3
+So 
+if we ignore constants:
+n <= T(n) < n^2
+So T(n) E omega(n) and T(n) E O(n^2)
+
+Now, the upper bound may be deceiving.
+A function that has a runtime of n, it would be valid to say it has a big O of O(n), or O(n^2), or O(n^3), as n is < n^2 and n^3
+
+Adding and multiplication of functions apply. 
+Meaning, if code A with O(n) runs inside of code B with O(n^2) then the result would be O(n^3) as any time code B runs, code A with execute O(n).
