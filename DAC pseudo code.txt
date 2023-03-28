@@ -1,0 +1,25 @@
+func baseMinList(list):
+    ret recMinList(list)
+
+func findMin(n1, n2):
+    if n1 < n2:
+        ret n2
+    if n2 < n1:
+        ret n1
+
+
+func recMinList(list):
+    n = len(list)
+    if n > 2:
+        firstHalf = list(0 : integer(n)/2)
+        secondHalf = list(integer(n)/2 : n)
+        lastInFirstHalf = firstHalf[n]
+        firstInSecondHalf = secondHalf[0]
+        minMid = findMin(lastInFirstHalf, firstInSecondHalf)
+        minFirstHalf = recMinList(firstHalf)
+        minSecondHalf = recMinList(secondHalf)
+        ret findMin(findMin(minMid, minFirstHalf), minSecondHalf)
+    elif n = 2:
+        ret findMin(list[0], list[1])
+    else:
+        ret list[0]
