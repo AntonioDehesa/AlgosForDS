@@ -1,6 +1,5 @@
 def cPairDist(points: list[int]):
     points.sort() # First, we sort our list of points
-    print(points)
     return recCPairDist(points)
 
 def recCPairDist(points: list[int]):

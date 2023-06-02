@@ -21,48 +21,34 @@ def matrixMult(A,B):
                 C[i][j] += x*y
     return C
 
-def test1():
-    A = [[ 2, -3, 3],
-    [-2, 6, 5],
-    [ 4, 7, 8]]
-
-    B = [[-1, 9, 1],
-    [ 0, 6, 5],
-    [ 3, 4, 7]]
-    C = matrixMult(A, B) 
-    if not C == None:
-        printMatrix(C)
-
-def test2():
-    # Test2
-    A = [[ 2, -3, 3, 0],
-    [-2, 6, 5, 1],
-    [ 4, 7, 8, 2]]
-
-    B = [[-1, 9, 1],
-    [ 0, 6, 5],
-    [ 3, 4, 7]]
-    C = matrixMult(A, B) 
-
-    if not C == None:
-        printMatrix(C)
-
-def test3():
-    A = [[ 2, -3, 3, 5],
-    [-2, 6, 5, -2]]
-
-    B = [[-1, 9, 1],
-    [ 0, 6, 5],
-    [ 3, 4, 7],
-    [ 1, 2, 3]]
-    C = matrixMult(A, B) 
-    if not C == None:
-        printMatrix(C)
-
-if __name__ == "__main__":
-    print("Test 1")
-    test1()
-    print("Test 2")
-    test2()
-    print("Test 3")
-    test3()
+# Testing code
+# Test1
+A = [[ 2, -3, 3],
+[-2, 6, 5],
+[ 4, 7, 8]]
+B = [[-1, 9, 1],
+[ 0, 6, 5],
+[ 3, 4, 7]]
+C = matrixMult(A, B)
+if not C == None:
+    printMatrix(C)
+# Test2
+A = [[ 2, -3, 3, 0],
+[-2, 6, 5, 1],
+[ 4, 7, 8, 2]]
+B = [[-1, 9, 1],
+[ 0, 6, 5],
+[ 3, 4, 7]]
+C = matrixMult(A, B)
+if not C == None:
+    printMatrix(C)
+# Test3
+A = [[ 2, -3, 3, 5],
+[-2, 6, 5, -2]]
+B = [[-1, 9, 1],
+[ 0, 6, 5],
+[ 3, 4, 7],
+[ 1, 2, 3]]
+C = matrixMult(A, B)
+if not C == None:
+    printMatrix(C)
